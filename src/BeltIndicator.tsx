@@ -108,6 +108,7 @@ export default function ({
       },
       {translateX: size * 2},
     ],
+    opacity: progress.value / sliderWidth >= count - 1 ? 0 : 1,
   }));
 
   const dotHeadSlider = useAnimatedStyle(() => ({
@@ -156,6 +157,7 @@ export default function ({
       <Animated.View style={{flexDirection: 'row'}}>
         {[...Array(count + 2).keys()].map((_, i) => (
           <Indicator
+            key={`indicator-${i}`}
             progress={progress}
             index={i}
             color={indicatorColor}
