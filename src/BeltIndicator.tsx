@@ -15,7 +15,7 @@ interface IndicatorProps {
   size: number;
 }
 
-function Indicator({
+export default function Indicator({
   index,
   progress,
   color,
